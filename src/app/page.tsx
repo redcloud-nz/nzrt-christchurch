@@ -6,7 +6,7 @@ export default function Home() {
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <Image
-            src="/nzrt-logo-vertical.png"
+            src="/images/nzrt-logo-vertical.png"
             alt="NZRT logo"
             width={175}
             height={100}
@@ -16,7 +16,7 @@ export default function Home() {
         <div className="font-mono text-sm/6">This is an placeholder site for future use by Christchurch Response Teams.</div>
 
         <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[190px]"
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[220px]"
             href="https://www.civildefence.govt.nz/cdem-sector/nz-rts-new-zealand-response-teams"
             target="_blank"
             rel="noopener noreferrer"
