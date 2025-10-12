@@ -38,7 +38,7 @@ export function SpaceCase({ className, label, number, size = "md", team, ...prop
 
     return <div className={slots.base({ className })} {...props}>
         <Image
-            src="/space-case-1.png"
+            src="/images/space-case-1.png"
             alt="Space Case"
             width={250}
             height={250}

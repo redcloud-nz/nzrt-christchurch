@@ -56,11 +56,11 @@ export const teamBoxTemplates: Omit<BoxData, 'id' | 'team'>[] = [
                 { name: "Carabiner", quantity: 15, subname: "Groups of 5" }
             ]},
             { name: "Descenders", identifier: "D", items: [
-                { name: "Petzl I'D", quantity: 1 },
-                { name: "Kong Indo Evo Plus", quantity: 2 }
+                { name: "Petzl I'D S", quantity: 1, subname: "gold", imageUrl: '/images/items/Petzl-ID.png' },
+                { name: "Kong Indo Evo Plus", quantity: 2, imageUrl: '/images/items/Kong-IndyEvoPlus.png' }
             ]},
             { name: "Rope Grabs and Pulleys", identifier: "E", items: [
-                { name: "Rope Grab", quantity: 4, subname: "red" },
+                { name: "Rope Grab", quantity: 4, subname: "red", imageUrl: '/images/items/DMM-Buddy.png' },
                 { name: "Single Pulley", quantity: 3, subname: 'red' },
                 { name: "Double Pulley", quantity: 2, subname: 'gold' },
                 { name: "Swivel", quantity: 1 }

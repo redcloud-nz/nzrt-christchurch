@@ -8,12 +8,14 @@ export interface BoxData {
     team?: TeamData;
     items: ItemData[]
     bags?: Bag[]
+    
 }
 
 export interface ItemData {
     name: string
     subname?: string
     quantity?: number
+    imageUrl?: string
 }
 
 export interface Bag {

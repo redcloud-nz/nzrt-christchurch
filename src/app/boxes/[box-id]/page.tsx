@@ -1,9 +1,15 @@
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 import { SpaceCase } from '@/components/space-case'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+
+import { ItemData } from '@/data/box'
 import { allBoxes } from '@/data/inventory'
+
+
 
 export async function generateMetadata(props: PageProps<'/boxes/[box-id]'>) {
     const { 'box-id': boxId} = await props.params;
@@ -53,30 +59,39 @@ export default async function BoxPage(props: PageProps<'/boxes/[box-id]'>) {
             </CardHeader>
             <CardContent>
                 <ul className="space-y-2">
-                    {box.items.map((item, index) => <li key={index} className="flex items-center gap-4">
-                        <Checkbox id={`item-${index}`}/>
-                        <label htmlFor={`item-${index}`} className="flex items-center gap-4">
-                            <span className="w-8 font-mono mr-2 text-right">{item.quantity && <>{item.quantity}&times;</>}</span>
-                            <span>{item.name}</span>
-                            {item.subname && <span className="text-muted-foreground">({item.subname})</span>}
-                        </label>
-                    </li>)}
+                    {box.items.map((item, index) => <Item key={index} id={`item-${index}`} item={item} />)}
                     {box.bags && box.bags.map((bag, index) => <li key={index}>
                         <div className="font-bold mb-2">Bag {bag.identifier} - {bag.name}</div>
                         <ul className="space-y-2">
-                            {bag.items.map((item, index) => <li key={index} className="flex items-center gap-4">
-                                <Checkbox id={`item-${index}`}/>
-                                <label htmlFor={`item-${index}`} className="flex items-center gap-4">
-                                    <span className="w-8 font-mono mr-2 text-right">{item.quantity && <>{item.quantity}&times;</>}</span>
-                                    <span>{item.name}</span>
-                                    {item.subname && <span className="text-muted-foreground">({item.subname})</span>}
-                                </label>
-                            </li>)}
+                            {bag.items.map((item, index) => <Item key={index} id={`bag-${bag.identifier}-item-${index}`} item={item} />)}
                         </ul>
-                        
                     </li>)}
                 </ul>
             </CardContent>
         </Card>
     </main>
+}
+
+function Item({ id, item }: { id: string, item: ItemData }) {
+    
+    return <li className="flex items-center gap-4">
+        <Checkbox id={id}/>
+        <label htmlFor={id} className="flex items-center gap-4">
+            <span className="w-8 font-mono mr-2 text-right">{item.quantity && <>{item.quantity}&times;</>}</span>
+            <span>{item.name}</span>
+            {item.subname && <span className="text-muted-foreground">({item.subname})</span>}
+        </label>
+        
+        {item.imageUrl && <Dialog>
+            <DialogTrigger className="hover:opacity-80 active:opacity-60 transition-opacity">
+                <Image src={item.imageUrl} alt={item.name} width={32} height={32} className="ml-4"/>
+            </DialogTrigger>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>{item.name} {item.subname && <span className="text-muted-foreground">({item.subname})</span>}</DialogTitle>
+                </DialogHeader>
+                <Image src={item.imageUrl} alt={item.name} width={400} height={400} className="mx-auto"/>
+            </DialogContent>
+        </Dialog>}
+    </li>
 }
