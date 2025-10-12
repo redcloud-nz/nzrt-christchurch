@@ -60,7 +60,7 @@ export default async function BoxPage(props: PageProps<'/boxes/[box-id]'>) {
             <CardContent>
                 <ul className="space-y-2">
                     {box.items.map((item, index) => <Item key={index} id={`item-${index}`} item={item} />)}
-                    {box.bags && box.bags.map((bag, index) => <li key={index}>
+                    {box.bags && box.bags.map((bag, index) => <li key={index} className="my-4">
                         <div className="font-bold mb-2">Bag {bag.identifier} - {bag.name}</div>
                         <ul className="space-y-2">
                             {bag.items.map((item, index) => <Item key={index} id={`bag-${bag.identifier}-item-${index}`} item={item} />)}
@@ -74,12 +74,16 @@ export default async function BoxPage(props: PageProps<'/boxes/[box-id]'>) {
 
 function Item({ id, item }: { id: string, item: ItemData }) {
     
-    return <li className="flex items-center gap-4">
-        <Checkbox id={id}/>
-        <label htmlFor={id} className="flex items-center gap-4">
-            <span className="w-8 font-mono mr-2 text-right">{item.quantity && <>{item.quantity}&times;</>}</span>
-            <span>{item.name}</span>
-            {item.subname && <span className="text-muted-foreground">({item.subname})</span>}
+    return <li className="flex items-start gap-2">
+        <Checkbox id={id} className="my-0.5"/>
+        <label htmlFor={id} className="flex gap-x-2">
+            <div className="w-8 font-mono mr-2 text-right">{item.quantity && <>{item.quantity}&times;</>}</div>
+            <div>
+                {item.name}
+                {" "}
+                {item.subname && <span className="text-muted-foreground">({item.subname})</span>}
+            </div>
+            
         </label>
         
         {item.imageUrl && <Dialog>
