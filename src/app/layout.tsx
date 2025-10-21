@@ -1,3 +1,8 @@
+/*
+ *  Copyright (c) 2025 Redcloud Development, Ltd.
+ *  Licensed under the MIT License. See LICENSE.md in the project root for license information.
+ */
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -16,18 +21,12 @@ export const metadata: Metadata = {
    title: "Christchurch Response Teams",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100`}
-      >
-        {children}
-      </body>
+export default function RootLayout({ children }: LayoutProps<'/'>) {
+    return <html lang="en-nz">
+        <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
+        >
+            {children}
+        </body>
     </html>
-  );
 }

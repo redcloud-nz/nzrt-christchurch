@@ -40,7 +40,6 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
-  --font-impact: var(--font-impact);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -95,7 +94,6 @@
   --font-sans: Geist Mono, monospace;
   --font-serif: Geist Mono, monospace;
   --font-mono: Geist Mono, monospace;
-  --font-impact: Impact, "Arial Black", sans-serif;
   --radius: 0rem;
   --shadow-x: 0px;
   --shadow-y: 1px;
@@ -153,7 +151,6 @@
   --font-sans: Geist Mono, monospace;
   --font-serif: Geist Mono, monospace;
   --font-mono: Geist Mono, monospace;
-  --font-impact: Impact, "Arial Black", sans-serif;
   --radius: 0rem;
   --shadow-x: 0px;
   --shadow-y: 1px;
