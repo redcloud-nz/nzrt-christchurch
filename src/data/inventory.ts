@@ -7,15 +7,23 @@ export const teamBoxTemplates: Omit<BoxData, 'id' | 'team'>[] = [
     { label: "Blankets", number: "01", items: [
         { name: "Blankets", quantity: 12 },
     ] },
-    { label: "Casualty Clearing", number: "02", items: [
-        { name: "Medical Forms", quantity: 1 },
-        { name: "Triage Tags" , quantity: 20, subname: "Set of 4 bands" },
-        { name: "Casualty Tags", quantity: 50 },
-        { name: "Box of Gloves", quantity: 1 },
-        { name: "Box of Pens" , quantity: 1 },
-        { name: "Red Laminated Cards", quantity: 2 },
-        { name: "Yellow Laminated Cards", quantity: 2 },
-    ] },
+    { 
+        label: "Casualty Clearing", 
+        number: "02",
+        image: {
+            filename: 'Team-Casualty-Clearing-20251107.jpeg',
+            size: { width: 1600, height: 1200 }
+        },
+        items: [
+            { name: "Medical Forms", quantity: 1 },
+            { name: "Triage Tags" , quantity: 20, subname: "Set of 4 bands" },
+            { name: "Casualty Tags", quantity: 50 },
+            { name: "Box of Gloves", quantity: 1 },
+            { name: "Box of Pens" , quantity: 1 },
+            { name: "Red Laminated Cards", quantity: 2 },
+            { name: "Yellow Laminated Cards", quantity: 2 },
+        ]
+    },
     { label: "Consumables - PPE", number: "03", items: [
         { name: "Medical Gloves", quantity: 1, subname: "box, S" },
         { name: "Medical Gloves", quantity: 1, subname: "box, M" },
@@ -37,7 +45,13 @@ export const teamBoxTemplates: Omit<BoxData, 'id' | 'team'>[] = [
         { name: "Hand Sanitiser", quantity: 1, subname: "bottle" },
 
     ] },
-    { label: "High Angle Kit", number: "04", 
+    { 
+        label: "High Angle Kit", 
+        number: "04",
+        image: {
+            filename: 'Team-High-Angle-20251107.jpeg',
+            size: { width: 1200, height: 1600 }
+        },
         items: [
             { name: "Edge Protector", quantity: 2, subname: "with cord" },
             { name: "Throw line", quantity: 2, subname: "with bag" },

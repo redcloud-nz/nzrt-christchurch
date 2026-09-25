@@ -67,6 +67,13 @@ export default async function BoxPage(props: PageProps<'/boxes/[box-id]'>) {
                         </ul>
                     </li>)}
                 </ul>
+                { box.image && <Image
+                    src={`/images/box-contents/${box.image.filename}`}
+                    alt={box.label}
+                    width={box.image.size.width}
+                    height={box.image.size.height}
+                    className="mx-auto mt-4"
+                />}
             </CardContent>
         </Card>
     </main>

@@ -5,6 +5,10 @@ export interface BoxData {
     id: string
     label: string;
     number: string;
+    image?: {
+        filename: string;
+        size: { width: number; height: number };
+    }
     team?: TeamData;
     items: ItemData[]
     bags?: Bag[]
