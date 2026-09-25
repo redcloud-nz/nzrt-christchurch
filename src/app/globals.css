@@ -175,6 +175,18 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /*
+   * Radix ScrollArea wraps its children in a `display: table` div (for width
+   * auto-sizing), which forces the browser to generate anonymous table-cell
+   * boxes around normal block content. `position: sticky` doesn't establish a
+   * working containing block inside those anonymous cells, so any `sticky`
+   * descendant (e.g. a side nav) silently stops sticking. Force that wrapper
+   * back to `block` since we never rely on the table auto-sizing behaviour.
+   */
+  [data-slot="scroll-area-viewport"] > div {
+    display: block !important;
+  }
 }
 
 
