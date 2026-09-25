@@ -3,12 +3,12 @@ import Link from "next/link";
 
 import { MobileToc } from "./mobile-toc";
 
-export default function KnotsLayout({ children }: LayoutProps<"/knots">) {
+export default function KnotsLayout({ children }: LayoutProps<"/guides/knots">) {
   return (
     <div>
       <div className="print:hidden h-[40px] grid grid-cols-[40px_1fr_40px] items-center border-b bg-background shadow-lg">
         <MobileToc />
-        <Link href="/knots">
+        <Link href="/guides/knots">
           <h1 className="text-xl text-center font-bold">Knots</h1>
         </Link>
         <div></div>
