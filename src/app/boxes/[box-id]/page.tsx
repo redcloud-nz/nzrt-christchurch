@@ -9,8 +9,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { ItemData } from '@/data/box'
 import { allBoxes } from '@/data/inventory'
 
-
-
 export async function generateMetadata(props: PageProps<'/boxes/[box-id]'>) {
     const { 'box-id': boxId} = await props.params;
 

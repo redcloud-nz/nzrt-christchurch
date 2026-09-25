@@ -1,7 +1,6 @@
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Link from 'next/link'
 
-
 export default function BoxesLayout({ children }: LayoutProps<'/boxes'>) {
     return <div>
         <div className="print:hidden h-[40px] grid grid-cols-[40px_1fr_40px] items-center border-b bg-background shadow-lg">

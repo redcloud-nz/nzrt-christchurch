@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-
 import { ItemData } from '@/data/box'
 import { allBoxes } from '@/data/inventory'
 import { ComponentProps } from 'react'
@@ -35,12 +34,9 @@ export default async function BoxPrintPage(props: PageProps<'/boxes/[box-id]/pri
     </div>
 }
 
-
-
 export function Sheet({ className, ...props}: ComponentProps<'div'>) {
     return <div className={cn("not-print:w-[210mm] not-print:p-[10mm] bg-white", className)} {...props}/>
 }
-
 
 function Header() {
     return <div className="w-full flex items-center justify-end gap-4">

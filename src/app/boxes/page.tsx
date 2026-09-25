@@ -5,7 +5,6 @@ import { SpaceCase } from '@/components/space-case'
 
 import { sections } from '@/data/inventory'
 
-
 export const metadata = {
     title: 'Boxes | Christchurch Response Teams',
     description: 'Christchurch Response Team Equipment Boxes',
@@ -34,10 +33,6 @@ export default function BoxesIndexPage() {
         
     </main>
 }
-
-
-
-
 
 function Section({ children, title }: { children: React.ReactNode, title: string }) {
     return <section>

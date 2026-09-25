@@ -3,12 +3,10 @@
  *  Licensed under the MIT License. See LICENSE.md in the project root for license information.
  */
 
-
 import Image from 'next/image'
 import { ComponentProps } from 'react'
 
 import { cn } from '@/lib/utils'
-
 
 export default function Home() {
   return (
@@ -74,7 +72,6 @@ function WebsiteButton({ className, ...props }: ComponentProps<'a'>) {
         {...props}
     />
 }
-
 
 function FacebookButton({ className, children, ...props }: ComponentProps<'a'>) {
     return <a
